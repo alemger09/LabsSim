@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "title": "LabSim — Virtual lab"
+  },
+  "common": {
+    "language": "Language"
+  },
+  "nav": {
+    "openLab": "Open lab",
+    "signIn": "Sign in"
+  },
+  "landing": {
+    "kicker": "Practical science for grades 8–11",
+    "heroTitle": "Virtual labs with lessons, not just sliders",
+    "heroSubtitle": "LabSim combines interactive 3D experiments, structured lesson content, and an AI tutor—so students connect theory, prediction, and observation in one place.",
+    "getStarted": "Get started",
+    "trySandbox": "Try the sandbox",
+    "bullet1": "Chemistry & physics simulations",
+    "bullet2": "Lesson objectives + expandable sections",
+    "bullet3": "Live data tied to what you see",
+    "howTitle": "How LabSim teaches",
+    "howLead": "A simple loop: read, manipulate, observe, explain—supported by the sim and the tutor.",
+    "step1Title": "Pick a lesson",
+    "step1Text": "Each lab pairs objectives, readings, and checkpoints with a live 3D simulation.",
+    "step2Title": "Tune the experiment",
+    "step2Text": "Change variables, predict outcomes, then press Play to see motion and measured data together.",
+    "step3Title": "Learn with the AI tutor",
+    "step3Text": "Ask Socratic questions in context—the assistant knows your parameters and live readouts.",
+    "catalogTitle": "Experiments on the platform",
+    "catalogLead": "More subjects and labs can ship the same way—lesson metadata, metrics, and a scene.",
+    "exploreLab": "Explore in the lab",
+    "catalogFallback": "Hands-on simulation with live data.",
+    "catalogCta": "Open in workspace →",
+    "ctaTitle": "Ready for your next class block?",
+    "ctaText": "Sign in (demo), pick an experiment, read the lesson, then run the sim.",
+    "ctaButton": "Start teaching",
+    "footerTagline": "LabSim — practical education, browser-first.",
+    "footerLab": "Lab"
+  },
+  "auth": {
+    "back": "← Back to Hub",
+    "welcomeBack": "Welcome Back",
+    "createAccount": "Create Account",
+    "subtitle": "Access the virtual laboratory to continue your experiments.",
+    "email": "School Email",
+    "emailPlaceholder": "student@school.edu",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInSubmit": "Sign In to LabSim",
+    "registerSubmit": "Register Account",
+    "noAccount": "Don't have an account? ",
+    "hasAccount": "Already have an account? ",
+    "signUpHere": "Sign up here",
+    "signInHere": "Sign in here"
+  },
+  "lab": {
+    "mobileExperiment": "Experiment",
+    "intro": "Explore how variables change outcomes. Open the lesson for objectives, then run the sim and ask the AI tutor.",
+    "statusPill": "Virtual lab · practical + theory"
+  },
+  "controls": {
+    "title": "Controls",
+    "play": "Play",
+    "stop": "Stop"
+  },
+  "lesson": {
+    "title": "Lesson",
+    "badge": "Theory + lab",
+    "objectivesTitle": "Objectives",
+    "empty": "No lesson content for this experiment yet."
+  },
+  "data": {
+    "title": "Live data"
+  },
+  "ai": {
+    "systemLanguageHint": "Always respond in English. Keep answers short (2–4 sentences).",
+    "title": "AI Tutor",
+    "placeholder": "Ask a question...",
+    "send": "Send",
+    "loading": "...",
+    "welcome": "I am your virtual lab assistant. Ask me anything about this experiment!",
+    "error": "Could not reach Gemini. Set GEMINI_API_KEY in .env (see .env.example), restart npm run dev, and use the dev server — the key is applied by the Vite proxy.",
+    "fallback": "Sorry, I could not get a response from the assistant.",
+    "greeting": "Hi! I'm LabSim Assistant — an AI tutor, not a human teacher. I'll help you explore this experiment by asking questions, not by giving you answers directly. Ready to start?",
+    "badge": "AI",
+    "report": {
+      "footnote": "Note: The AI assistant in this session was an automated system, not a human teacher."
+    }
+  },
+  "safety": {
+    "title": "Lab Safety",
+    "ppe": "PPE Required",
+    "hazards": "Hazards",
+    "realLab": "In a real lab...",
+    "none": "No special PPE required",
+    "ppe": {
+      "goggles": "Safety goggles",
+      "gloves": "Nitrile gloves",
+      "lab-coat": "Lab coat"
+    }
+  },
+  "errors": {
+    "runtimeTitle": "LabSim — Runtime Error",
+    "missingApiKey": "Add GEMINI_API_KEY to your .env file (Google AI Studio)."
+  },
+  "experiments": {
+    "acidBase": {
+      "name": "Acid-Base Reaction",
+      "subject": "Chemistry",
+      "grade": "Grade 9",
+      "aiContext": "The student is using the Acid-Base Reaction experiment with pH {{ph}}, volume {{volume}} ml, liquid indicator regime {{indicator}}, temperature {{temperature}}°C, and bubble activity {{bubbles}}.",
+      "controls": {
+        "ph": "pH",
+        "volume": "Volume (ml)"
+      },
+      "metrics": {
+        "ph": { "label": "pH", "unit": "" },
+        "volume": { "label": "Volume", "unit": " ml" },
+        "temperature": { "label": "Temperature", "unit": "°C" },
+        "indicatorKey": { "label": "Indicator (qual.)", "unit": "" },
+        "bubbles": { "label": "Bubble activity", "unit": "" }
+      },
+      "indicators": {
+        "strongAcid": "strong acid",
+        "acid": "acid",
+        "neutral": "neutral",
+        "base": "base",
+        "strongBase": "strong base"
+      },
+      "lesson": {
+        "summary": "Connect pH, indicator color, and simple solution behavior in a virtual flask—safe, repeatable, and tied to what you see in the beaker.",
+        "objectives": [
+          "Explain how pH relates to acidity and basicity on the 1–14 scale.",
+          "Observe how volume changes the visual “fill” while pH drives color.",
+          "Use temperature and bubbles as secondary cues for vigorous vs calm conditions."
+        ],
+        "sections": [
+          {
+            "title": "Foundations",
+            "body": "pH is a logarithmic scale for hydrogen-ion activity in aqueous solutions. Near pH 7, solutions are roughly neutral; much lower is acidic, much higher is basic. Indicators change color across ranges to make that visible."
+          },
+          {
+            "title": "In the simulation",
+            "body": "Drag pH and volume: the liquid tint tracks the indicator regime, and bubble activity increases for stronger acid or base in this simplified model—use it to spark discussion, not as a substitute for real titration data."
+          },
+          {
+            "title": "Next steps in class",
+            "body": "Pair each observation with a prediction before you press Play. Ask: “If I raise pH by 2 units, what should happen to color and bubbling?”"
+          }
+        ]
+      }
+    },
+    "pendulum": {
+      "name": "Simple Pendulum",
+      "subject": "Physics",
+      "grade": "Grade 10",
+      "aiContext": "The student is exploring an ideal pendulum. Current setup: Length {{length}}m, Mass {{mass}}kg, and Gravity {{gravity}} m/s². Calculated Period is {{period}}s and Frequency is {{frequency}}Hz.",
+      "controls": {
+        "length": "Length (m)",
+        "mass": "Mass (kg)",
+        "gravity": "Gravity (m/s²)"
+      },
+      "metrics": {
+        "length": { "label": "Length", "unit": " m" },
+        "mass": { "label": "Mass", "unit": " kg" },
+        "gravity": { "label": "g", "unit": " m/s²" },
+        "period": { "label": "Period", "unit": " s" },
+        "frequency": { "label": "Frequency", "unit": " Hz" }
+      },
+      "lesson": {
+        "summary": "A simple pendulum’s period—for small swings—depends on length and gravitational field, not on the bob’s mass in the ideal model.",
+        "objectives": [
+          "Use T ≈ 2π√(L/g) to predict how period changes when length or g changes.",
+          "Contrast the role of mass in the simulation (damping/size) vs ideal period.",
+          "Relate the motion you see to the computed period and frequency."
+        ],
+        "sections": [
+          {
+            "title": "Core ideas",
+            "body": "For small angles, the pendulum approximates simple harmonic motion with angular frequency ω = √(g/L). Heavier bobs don’t change T in the ideal point-mass model—though mass matters for real friction, string stretch, and energy."
+          },
+          {
+            "title": "Try this",
+            "body": "Keep gravity at Earth-like values and double the length: period should increase. Then shorten the string and raise g (still within the slider)—period should drop."
+          },
+          {
+            "title": "Where the model stops",
+            "body": "Large swing angles, air drag, and a flexible string break the small-angle approximation. Discuss which error matters first in a classroom demo."
+          }
+        ]
+      }
+    },
+    "projectile": {
+      "name": "Projectile Motion",
+      "subject": "Physics",
+      "grade": "Grade 10",
+      "aiContext": "The student is running a Projectile Motion experiment. Launch angle: {{angle}}°, initial speed: {{speed}} m/s, gravity: {{gravity}} m/s². The projectile travels {{range}} m horizontally, reaches a maximum height of {{maxHeight}} m, and lands after {{timeOfFlight}} seconds.",
+      "controls": {
+        "angle": "Launch Angle (°)",
+        "speed": "Initial Speed (m/s)",
+        "gravity": "Gravity (m/s²)"
+      },
+      "metrics": {
+        "angle": { "label": "Angle", "unit": "°" },
+        "speed": { "label": "Speed", "unit": " m/s" },
+        "gravity": { "label": "g", "unit": " m/s²" },
+        "range": { "label": "Range", "unit": " m" },
+        "maxHeight": { "label": "Max height", "unit": " m" },
+        "timeOfFlight": { "label": "Time of flight", "unit": " s" }
+      },
+      "lesson": {
+        "summary": "Projectile motion separates into horizontal and vertical pieces: uniform motion sideways, uniform acceleration vertically. The range and peak height follow from those pieces.",
+        "objectives": [
+          "Break initial velocity into components using the launch angle.",
+          "Predict how range changes when angle or speed changes (for a flat field).",
+          "Read off time of flight, apex height, and range coherently."
+        ],
+        "sections": [
+          {
+            "title": "Equations (flat field)",
+            "body": "With launch speed v and angle θ, vₓ = v cos θ and vᵧ = v sin θ. Time of flight for symmetric landing is 2vᵧ/g. Range R = vₓ × t. Max height occurs when vertical velocity hits zero."
+          },
+          {
+            "title": "What to explore",
+            "body": "Fix speed and sweep angle: many students discover ~45° maximizes range on flat ground for a given v and g. Then fix angle and scale speed—range should grow roughly with v²."
+          },
+          {
+            "title": "Reality check",
+            "body": "We ignore air resistance. For light objects or high speeds, trajectories deviate—great discussion hook for modeling assumptions."
+          }
+        ]
+      }
+    },
+    "spring": {
+      "name": "Mass–Spring Oscillator",
+      "subject": "Physics",
+      "grade": "Grade 11",
+      "aiContext": "The student is using the Mass–Spring experiment with k={{k}} N/m, mass={{mass}} kg, amplitude={{amplitude}} m. Angular frequency ω={{omega}} rad/s, period={{period}} s, frequency={{frequency}} Hz.",
+      "controls": {
+        "k": "Spring constant k (N/m)",
+        "mass": "Mass (kg)",
+        "amplitude": "Amplitude (m)"
+      },
+      "metrics": {
+        "period": { "label": "Period", "unit": " s" },
+        "frequency": { "label": "Frequency", "unit": " Hz" },
+        "omega": { "label": "Angular frequency ω", "unit": " rad/s" },
+        "k": { "label": "Spring k", "unit": " N/m" },
+        "mass": { "label": "Mass", "unit": " kg" }
+      },
+      "lesson": {
+        "summary": "Explore simple harmonic motion: a mass attached to an ideal spring oscillates with a period that depends on stiffness and mass, not on amplitude (for ideal springs).",
+        "objectives": [
+          "Relate angular frequency ω to k and m.",
+          "Predict how period changes when you increase mass or soften the spring.",
+          "Connect the 3D motion to the live period and frequency readouts."
+        ],
+        "sections": [
+          {
+            "title": "Core ideas",
+            "body": "For an ideal mass–spring system, ω = √(k/m). The period T = 2π/ω and frequency f = 1/T. A stiffer spring (larger k) raises ω and shortens T. A larger mass lowers ω and lengthens T."
+          },
+          {
+            "title": "What to try",
+            "body": "Hold amplitude fixed: double the mass and observe the period. Then restore mass and double k—period should move the opposite way. Use Play to see the bob trace SHM while numbers update."
+          },
+          {
+            "title": "Going further",
+            "body": "Real springs have damping and limits; our model assumes Hooke’s law and no friction. Discuss where that breaks down for real lab equipment."
+          }
+        ]
+      }
+    },
+    "circuitOhm": {
+      "name": "Ohm’s Law (DC)",
+      "subject": "Physics",
+      "grade": "Grade 9",
+      "aiContext": "The student is exploring Ohm’s law with V={{voltage}} V, R={{resistance}} Ω, so I={{current}} A and P={{power}} W.",
+      "controls": {
+        "voltage": "Voltage (V)",
+        "resistance": "Resistance (Ω)"
+      },
+      "metrics": {
+        "current": { "label": "Current I", "unit": " A" },
+        "power": { "label": "Power P", "unit": " W" },
+        "voltage": { "label": "Voltage V", "unit": " V" },
+        "resistance": { "label": "Resistance R", "unit": " Ω" }
+      },
+      "lesson": {
+        "summary": "Ohm’s law relates voltage, current, and resistance in many DC circuits: V = I R. Power dissipated in the resistor is P = V I = I²R.",
+        "objectives": [
+          "Compute current from V and R and interpret the value.",
+          "See how power changes when you hold one quantity fixed and vary the other.",
+          "Relate brighter “wire glow” in the sim to higher current."
+        ],
+        "sections": [
+          {
+            "title": "Core ideas",
+            "body": "For an ohmic resistor, I = V/R. If resistance doubles while voltage stays the same, current halves. Power P = V²/R = I²R—useful for intuition about heat and energy per second."
+          },
+          {
+            "title": "What to try",
+            "body": "Set V = 12 V and sweep R from low to high: watch current and glow fall. Then fix R and raise V: current and power should rise (careful in real labs—components can overheat)."
+          },
+          {
+            "title": "Limits of the model",
+            "body": "Real batteries have internal resistance; wires aren’t perfect. The simulation highlights the ideal relationship so you can reason clearly before adding real-world corrections."
+          }
+        ]
+      }
+    }
+  }
+}
