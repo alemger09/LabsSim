@@ -8,7 +8,6 @@ import AIAssistant from '../components/AIAssistant';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import LiveGraph from '../components/LiveGraph';
 import SafetyPanel from '../components/SafetyPanel';
-import ExperimentLayout from '../layouts/ExperimentLayout';
 import experiments from '../experiments';
 import { useI18n } from '../i18n/I18nContext';
 import { localizeExperiment } from '../i18n/localizeExperiment';
@@ -95,21 +94,62 @@ export default function LabWorkspace() {
   };
 
   return (
-    <ExperimentLayout
-      experimentId={activeExperimentKey}
-      simState={simState}
-      params={params}
-      onParamChange={handleParamChange}
-      running={running}
-      onPlay={handlePlay}
-      onStop={() => setRunning(false)}
-      graphData={graphData}
-      onSnapshot={addSnapshot}
-      onClear={clearGraph}
-      messages={messages}
-      onAddMessage={handleAddMessage}
-      activeExperiment={activeExperiment}
-      activeLocalized={activeLocalized}
-    />
+    <div className="app-shell">
+      <Sidebar experiments={experimentsForNav} activeKey={activeExperimentKey} onSelect={handleExperimentSelect} />
+      <main className="workspace">
+        <div className="workspace-top-tools">
+          <LanguageSwitcher className="workspace-lang" />
+        </div>
+        <div className="mobile-experiment-bar">
+          <label htmlFor="mobile-experiment">{t('lab.mobileExperiment')}</label>
+          <select
+            id="mobile-experiment"
+            className="mobile-experiment-select"
+            value={activeExperimentKey}
+            onChange={(e) => handleExperimentSelect(e.target.value)}
+          >
+            {experimentsForNav.map((exp) => (
+              <option key={exp.key} value={exp.key}>
+                {exp.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <section className="top-bar">
+          <div>
+            <div className="eyebrow">
+              {activeLocalized.subject} · {activeLocalized.grade}
+            </div>
+            <h2>{activeLocalized.name}</h2>
+            <p>{t('lab.intro')}</p>
+          </div>
+          <div className="status-pill">{t('lab.statusPill')}</div>
+        </section>
+        <div className="sim-row">
+          <SimCanvas experimentKey={activeExperimentKey} simState={simState} running={running} />
+          <section className="panel-stack">
+            <LessonPanel lesson={activeLocalized.lesson} />
+            <ControlsBar
+              controls={activeLocalized.controls}
+              params={params}
+              onParamChange={handleParamChange}
+              running={running}
+              onPlay={handlePlay}
+              onStop={() => setRunning(false)}
+            />
+            <DataPanel simState={simState} metrics={activeLocalized.metrics} experimentKey={activeExperiment.key} />
+            <SafetyPanel experimentId={activeExperimentKey} />
+            <LiveGraph
+              experimentId={activeExperimentKey}
+              graphData={graphData}
+              onSnapshot={addSnapshot}
+              onClear={clearGraph}
+            />
+          </section>
+        </div>
+        <AIAssistant experimentContext={aiContext} messages={messages} onAddMessage={handleAddMessage} />
+      </main>
+    </div>
   );
 }
